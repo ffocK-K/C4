@@ -1,0 +1,32 @@
+# System Design
+
+## 1. Architecture
+Flask(MVC) + SQLite + openpyxl
+
+## 2. Modules
+
+### (1) Contact Management
+- 新增联系人
+- 编辑联系人
+- 删除联系人
+- 收藏联系人（Boolean 字段）
+
+### (2) Multi-contact Methods
+表结构：
+contacts(id, name, is_starred)
+contact_methods(id, contact_id, type, value)
+
+### (3) Excel Import & Export
+utils/
+ ├── excel_export.py  
+ └── excel_import.py  
+使用 openpyxl 实现读写。
+
+### (4) Web Interface
+templates/
+ ├── index.html
+ ├── add_contact.html
+ ├── edit_contact.html
+
+### (5) Database
+SQLite + Python sqlite3
